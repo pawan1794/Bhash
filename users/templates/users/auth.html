@@ -1,0 +1,27 @@
+{% load staticfiles %}
+<html>
+    <head>
+        <title>login</title>
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+        <link href='//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="{% static 'css/login.css' %}">
+    </head>
+	<body>
+		<div class="login-page">
+			<div class="form">
+
+				<form action="/login/" method="post" class="login-form">
+					{% if next %}
+					<input type="hidden" name="next" value="{{ next }}" />
+					{% endif %}
+					<input type="text" name="username" value="{{ username }}" placeholder="username" /><br />
+					<input type="password" name="password" value="" placeholder="password"/><br />
+		
+					<button>login</button>
+					<p class="message">Not registered? <a href="{% url 'register'%}">Create an account</a></p>
+				</form>
+			</div>
+		</div>
+	</body>
+</html>

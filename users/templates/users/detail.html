@@ -1,0 +1,9 @@
+{% extends 'users/base.html' %}
+
+{% block content %}
+        <div class="post">
+               <h2>Phone Number : </h2> <h4> {{ detail.phone }} </h4>
+               <h2>Address : </h2> <h4> {{ detail.address }} </h4>
+             	<a  href="{% url 'detail_edit' pk=detail.pk %}" class="btn btn-default"><span class="glyphicon glyphicon-pencil"></span></a>
+        </div>
+{% endblock content %}

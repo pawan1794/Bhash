@@ -1,0 +1,27 @@
+{% load staticfiles %}
+<html>
+    <head>
+        <title>Signup</title>
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+        <link href='//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="{% static 'css/register.css' %}">
+    </head>
+	<body>
+		<div class="login-page">
+                <h1>{{state}}</h1>
+			<div class="form">
+
+				<form action="/accounts/register/" method="post" class="login-form">
+					{% csrf_token%}
+       					{{form}}
+					<button>Submit</button>
+					<p class="message">Already registered? <a href="{% url 'login_user'%}">Sign In</a></p>
+				</form>
+			</div>
+		</div>
+	</body>
+</html>
+
+
+
